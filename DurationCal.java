@@ -30,11 +30,12 @@ public class DurationCal {
 		 System.out.println("Time: " + sdf.format(d1));
 		 System.out.println("Time: " + sdf.format(d2));
 	    
+		 long min = 0;
 		 if(d1.after(d2)){
 		     long diffMs = d1.getTime() - d2.getTime();
 		     //diffMS = diffMs - (60*)
 		    // long diffSec = diffMs / 1000;
-		     long min = diffMs / (60*1000);
+		     min = diffMs / (60*1000);
 		     min = min - 60 ;
 		     
 		     //long sec = diffSec % 60;
@@ -45,7 +46,7 @@ public class DurationCal {
 		     long diffMs = d2.getTime() - d1.getTime();
 		     //diffMS = diffMs - (60*)
 			    // long diffSec = diffMs / 1000;
-			     long min = diffMs / (60*1000);
+			     min = diffMs / (60*1000);
 			     min = min - 60 ;
 			     
 			     //long sec = diffSec % 60;
@@ -55,6 +56,12 @@ public class DurationCal {
 	    if(d1.equals(d2)){
 	     System.out.println("The difference is 0 minutes and 0 seconds.");
 	    }
+	    //
+	    if ( min % 30 == 0) {
+	    	//devide 6 equal intervals
+	    }
+	    else
+	    	System.out.println("We can't devide equal of 5 min 6 intervals");
 	
 	 }
 }
